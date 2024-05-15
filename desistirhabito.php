@@ -28,3 +28,5 @@ if (!($conn->query($sql) === TRUE)) {
 $conn->close();
 // Redireciona para a página inicial
 header("Location: index.php")
+
+?>
