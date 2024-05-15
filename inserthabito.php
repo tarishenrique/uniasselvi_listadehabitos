@@ -3,12 +3,13 @@ $servidor = "localhost";
 $usuario = "root";
 $senha = "";
 $bancodedados = "listadehabito";
-// Abre a conexão com o banco
-// de dados listadehabito
-$conexao = new mysqli( $servidor
-, $usuario
-, $senha
-, $bancodedados);
+// Abre a conexão com o banco de dados listadehabito
+$conexao = new mysqli(
+    $servidor,
+    $usuario,
+    $senha,
+    $bancodedados
+);
 // Verifica se houve erro ao
 // abrir a conexão
 if ($conexao->connect_error) {
@@ -20,7 +21,7 @@ if ($conexao->connect_error) {
 $nome = $_GET["nome"];
 // Insere o hábito na tabela
 // habito do banco de dados
-$sql = "INSERT INTO habito (nome, status) VALUES ('".$nome."', 'A')";
+$sql = "INSERT INTO habito (nome, status) VALUES ('" . $nome . "', 'A')";
 // Verifica se ocorreu tudo bem
 // Caso houve erro, fecha a conexão
 // e aborta o programa
@@ -35,4 +36,3 @@ $conexao->close();
 // onde aparece a lista de hábitoss
 // já com o novo hábito cadastrado
 header("Location: index.php");
-?>

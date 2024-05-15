@@ -4,14 +4,16 @@ $usuario = "root";
 $senha = "";
 $bancodedados = "listadehabito";
 // Cria a conexão
-$conn = new mysqli( $servidor
-, $usuario
-, $senha
-, $bancodedados);
+$conn = new mysqli(
+    $servidor,
+    $usuario,
+    $senha,
+    $bancodedados
+);
 // Verifica se conectou
 // com sucesso
 if ($conn->connect_error) {
-    die("Falha na conexão: ". $conn->connect_error);
+    die("Falha na conexão: " . $conn->connect_error);
 }
 // Atualiza o status de A - ativo
 // para V - vencido
@@ -27,4 +29,3 @@ if (!($conn->query($sql) === TRUE)) {
 $conn->close();
 // Redireciona para index
 header("Location: index.php");
-?>
